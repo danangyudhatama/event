@@ -53,17 +53,17 @@ gulp.task('images', function(){
 
 gulp.task('clean:50k', function() {
   return del.sync('50k');
-})
+});
 
 gulp.task('build', function (callback) {
   runSequence('clean:50k', 
     ['sass', 'useref', 'images'],
     callback
   )
-})
+});
 
 gulp.task('default', function (callback) {
   runSequence(['sass','browserSync', 'watch'],
     callback
   )
-})
+});
